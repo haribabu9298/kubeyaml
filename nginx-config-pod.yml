@@ -12,7 +12,7 @@ spec:
     volumes:
       - name: test-vol
         configMap:
-           name: nginx-demo
+           name: nginx-demo #name_of_configmap_created 
            items:
            - key: file_1.txt
              path: file_1.txt
