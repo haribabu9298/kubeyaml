@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: nginx-pod
+spec:
+    containers:
+    - name: nginx-container
+      image: nginx
+      volumeMounts:
+      - name: test-vol
+        mountPath: /etc/configmap
+    volumes:
+      - name: test-vol
+        configMap:
+           name: nginx-demo
+           items:
+           - key: file_1.txt
+             path: file_1.txt
